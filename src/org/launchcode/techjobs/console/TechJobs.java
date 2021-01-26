@@ -1,3 +1,6 @@
+
+
+
 package org.launchcode.techjobs.console;
 
 import java.util.ArrayList;
@@ -62,6 +65,7 @@ public class TechJobs {
                 String searchTerm = in.nextLine();
 
                 if (searchField.equals("all")) {
+                    //Use my new class to search for job
                     printJobs(JobData.findByValue(searchTerm));
                 } else {
                     printJobs(JobData.findByColumnAndValue(searchField, searchTerm));
@@ -111,10 +115,12 @@ public class TechJobs {
 
     // Print a list of jobs
     private static void printJobs(ArrayList<HashMap<String, String>> someJobs) {
+        //If search term is no found return...
         if(someJobs.isEmpty()){
             System.out.println("No Jobs Available");
             return;
         }
+        //Iterate through hashmap and print all fields
         for(HashMap<String, String> job: someJobs){
             System.out.println("*****");
             for(Map.Entry<String, String> jobColumn : job.entrySet()) {
@@ -123,5 +129,5 @@ public class TechJobs {
             System.out.println("*****");
             System.out.println("\n");
         }
-    }
+}
 }
