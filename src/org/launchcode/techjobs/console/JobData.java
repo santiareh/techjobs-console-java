@@ -139,7 +139,6 @@ public class JobData {
                 //Compare find my search term and store it on arraylist
                 if (aValue.toLowerCase().contains(search.toLowerCase())) {
                     jobs.add(row);
-                    return jobs;
                 }
             }
         }
